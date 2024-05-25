@@ -2,8 +2,15 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center font-roboto justify-between p-5">
-      <div className="border border-[#FFF] w-[60%] bg-[#fff] p-5">
+    <main className="flex min-h-screen font-roboto p-5">
+      <div className="w-[30%]">
+        Fill in your details below:
+        <div className="flex w-full gap-3">
+        <input className="border w-full h-8 rounded-md" />
+        <input className="border w-full h-8 rounded-md" />
+        </div>
+      </div>
+      <div className="border border-[#FFF] w-[60%] ml-14 bg-[#fff] p-5">
         {/* Header */}
         <div className="flex justify-between items-end border-b-4 border-black/50 pb-5">
           <h1 className="text-5xl leading-[50px] font-semibold">CHRISTIAN <br /> CHIEMELA</h1>
@@ -46,8 +53,6 @@ export default function Home() {
               <p className="text-xs text-[#5446F1] underline font-semibold leading-3 tracking-normal mt-2 mb-3">https://codessy-web-lxr3o.ondigitalocean.app/</p>
               <p className="text-xs font-semibold leading-3 tracking-normal mt-2 mb-3">JAN 2024 – TILL DATE</p>
             </div>
-            {/* <li className="text-sm tracking-normal leading-4 text-start my-2">Collaborate with a team of developers, product manager’s and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.</li>
-            <li className="text-sm tracking-normal leading-4 text-start my-2">Collaborate with a team of developers, product manager’s and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.</li> */}
             <ul className="list-disc pl-3.5">
               <li className="text-sm tracking-normal leading-4 text-left mt-2">
                 Collaborate with a team of developers, product managers, and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.
