@@ -1,3 +1,5 @@
+import Project from "@/components/Project";
+import { experiences, projects } from "@/data";
 import Image from "next/image";
 
 export default function Home() {
@@ -25,44 +27,12 @@ export default function Home() {
         {/* Experience */}
         <div className="py-4">
           <h1 className="text-xl font-semibold leading-4 tracking-[.1%] text-[#4C4949]">EXPERIENCE</h1>
-          <div className="border-b-4 border-black/50 py-5">
-            <h2 className="text-[15px] font-extrabold tracking-normal leading-[17px]">SOFTWARE DEVELOPER</h2>
-            <div className="flex justify-between items-center">
-              <p className="text-xs font-semibold leading-3 tracking-normal mt-2 mb-3">Taxaide Limited | Lagos, Nigeria</p>
-              <p className="text-xs font-semibold leading-3 tracking-normal mt-2 mb-3">JAN 2024 – TILL DATE</p>
-            </div>
-            {/* <li className="text-sm tracking-normal leading-4 text-start my-2">Collaborate with a team of developers, product manager’s and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.</li>
-            <li className="text-sm tracking-normal leading-4 text-start my-2">Collaborate with a team of developers, product manager’s and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.</li> */}
-            <ul className="list-disc pl-3.5">
-              <li className="text-sm tracking-normal leading-4 text-left mt-2">
-                Collaborate with a team of developers, product managers, and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.
-              </li>
-              <li className="text-sm tracking-normal leading-4 text-left mt-2">
-                Collaborate with a team of developers, product managers, and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.
-              </li>
-              {/* Add more list items as needed */}
-            </ul>
-          </div>
+          <Project data={experiences} />
         </div>
         {/* Projects */}
         <div>
           <h1 className="text-xl font-semibold leading-4 tracking-[.1%] text-[#4C4949]">PROJECTS</h1>
-          <div className="border-b-4 border-black/50 py-5">
-            <h2 className="text-[15px] font-extrabold tracking-normal leading-[17px]">CODESSY TECHNOLOGIES</h2>
-            <div className="flex justify-between items-center">
-              <p className="text-xs text-[#5446F1] underline font-semibold leading-3 tracking-normal mt-2 mb-3">https://codessy-web-lxr3o.ondigitalocean.app/</p>
-              <p className="text-xs font-semibold leading-3 tracking-normal mt-2 mb-3">JAN 2024 – TILL DATE</p>
-            </div>
-            <ul className="list-disc pl-3.5">
-              <li className="text-sm tracking-normal leading-4 text-left mt-2">
-                Collaborate with a team of developers, product managers, and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.
-              </li>
-              <li className="text-sm tracking-normal leading-4 text-left mt-2">
-                Collaborate with a team of developers, product managers, and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.
-              </li>
-              {/* Add more list items as needed */}
-            </ul>
-          </div>
+          <Project data={projects} />
         </div>
         {/* Education */}
          <div className="py-4">
