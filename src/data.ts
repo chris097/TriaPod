@@ -10,7 +10,7 @@ export const experiences: IProjectProps[] = [
         project_url: '',
         location: 'Lagos, Nigeria',
         job_description: [
-            "Collaborate with a team of developers, product manager’s and designers to build the OredoPay application, a taxpayer platform for Oredo Local Government in Nigeria.",
+            "Collaborate with a team of developers, product managers, and designers to build the OredoPay web and mobile applications, a comprehensive taxpayer platform for Oredo Local Government in Nigeria.",
             "Contribute to strategic planning and decision-making processes, leveraging technical expertise and industry insights to drive product innovation and business growth.",
             "Conduct code reviews, testing, and debugging to maintain high-quality code standards and optimize application performance.",
             "Contribute to ongoing development and refinement of OredoPay, incorporating user feedback and industry best practices to drive innovation and excellence in the product offering."
@@ -71,8 +71,9 @@ export const projects = [
         project_url: 'https://codessy.io',
         location: '',
         job_description: [
-            "Spearheaded the development of a comprehensive church application from inception to deployment, incorporating features such as event calendars, sermon archives, and online donations.",
-            "Implemented user-friendly interfaces using modern front-end technologies such as React.js and tailored the application to provide seamless experiences across devices."
+            "Led the development of an intuitive and responsive user interface utilizing Next.js, Typeform, and TailwindCSS, enhancing user experience.",
+            "Worked closely with the team to engineer and integrate key functionalities, including property listings, client management, and transaction processing modules.",
+            "Architected a scalable and secure system infrastructure, adhering to best practices in software design"
         ]
     },
     {
@@ -84,8 +85,9 @@ export const projects = [
         project_url: 'https://www.crystalgarden.ng/',
         location: '',
         job_description: [
-            "Spearheaded the development of a comprehensive church application from inception to deployment, incorporating features such as event calendars, sermon archives, and online donations.",
-            "Implemented user-friendly interfaces using modern front-end technologies such as React.js and tailored the application to provide seamless experiences across devices."
+            "Conducted comprehensive requirements analysis to ensure alignment with client objectives and user needs.",
+            "Engineered and integrated key functionalities, including property listings, client management, and transaction processing modules.",
+            "Performed thorough testing using Jest and React Testing Library to guarantee application reliability and performance."
         ]
     },
 ]
@@ -97,6 +99,6 @@ export const education: string[] = [
 ];
 
 export const skills: string[] = [
-    "HTML5", "JavaScript", "React.js", "Next.js", "React-Native", "Typescript", "NodeJs",
+    "HTML5", "JavaScript", "React.js", "Next.js", "React-Native", "Typescript", "Node.js",
     "TailwindCSS", "CSS3", "ChakraUI", "Styles-Component", "Jest", "React-Testing-Library", "Git", "Github"
 ];

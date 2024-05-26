@@ -13,4 +13,5 @@ export interface IProjectProps {
 
 export interface IProjectData {
     data: IProjectProps[]
+    isProject?: boolean
 }

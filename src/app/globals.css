@@ -21,6 +21,7 @@ body {
   color: rgb(var(--background-end-rgb));
   background: #F5F6F7;
   opacity: .8;
+  -webkit-print-color-adjust: exact;
 }
 
 @layer utilities {
