@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Project from "@/components/Project";
 import { education, experiences, projects } from "@/data";
@@ -10,13 +11,16 @@ const Resume = () => {
 
     const handleDownload = async () => {
         if (componentRef.current) {
-            const pdf = new jsPDF('p', 'mm', 'a4');
+            const pdf:any = new jsPDF('p', 'mm', 'a4');
+
             const canvas = await html2canvas(componentRef.current, {
-                scale: 2,
+                scale: 3,
                 useCORS: true,
+                allowTaint: true,
+                logging: false,
             });
 
-            const imgData = canvas.toDataURL('image/png');
+            const imgData = canvas.toDataURL('image/jpeg', 0.9); // Adjust quality to 80%
             const imgWidth = 210; // A4 width in mm
             const pageHeight = 297; // A4 height in mm
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
@@ -25,20 +29,23 @@ const Resume = () => {
             let position = 0;
 
             // Add first page
-            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            pdf.addImage(imgData, 'JPEG', 0, position, imgWidth, imgHeight);
             heightLeft -= pageHeight;
 
             // Add more pages if necessary
-            while (heightLeft >= 0) {
+            while (heightLeft > 0) {
                 position = heightLeft - imgHeight;
                 pdf.addPage();
-                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                // Add margin-top: 40px for new pages
+                pdf.setPage(pdf.internal.getNumberOfPages());
+                pdf.addImage(imgData, 'JPEG', 0, position + 20, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
             }
 
             pdf.save('CHRISTIAN_CHIEMELA_CV.pdf');
         }
     };
+
     return (
         <div className='flex min-h-screen font-roboto justify-center flex-col p-5'>
             <div ref={componentRef} className="border border-[#FFF] w-[60%] mx-auto bg-[#fff] p-5">
@@ -54,7 +61,7 @@ const Resume = () => {
                     </div>
                 </div>
                 {/* Intro */}
-                <p className="text-sm font-medium border-b-4 border-black/50 py-4 tracking-tight">
+                <p className="text-sm font-medium border-b-4 border-black/50 pb-4 tracking-tight pt-3">
                     I am a dedicated Software Developer specializing in crafting top-tier applications and staying updated with industry advancements. Skilled in project leadership, requirements analysis, architectural design, and web/mobile development. Expertise in object-oriented programming with a strong focus on delivering high-quality software solutions.
                 </p>
                 {/* Experience */}
@@ -75,9 +82,12 @@ const Resume = () => {
                 <div className="">
                     <h1 className="text-xl font-semibold leading-4 tracking-[.1%] text-[#4C4949]">EDUCATION</h1>
                     <div className="border-b-4 border-black/50 pt-3 pb-5">
-                        <ul className="list-disc pl-3.5">
+                        <ul className="list-none pl-0">
                             {education?.map((edu, index) => (
-                                <li key={index} className="text-sm tracking-normal leading-4 text-left mt-2">{edu}</li>
+                                <div key={index} className="flex items-start mt-2">
+                                    <span className="mr-2">●</span>
+                                    <span className="text-sm tracking-normal leading-4 text-left">{edu}</span>
+                                </div>
                             ))}
                         </ul>
                     </div>

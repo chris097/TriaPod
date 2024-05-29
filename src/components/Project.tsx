@@ -21,9 +21,12 @@ const Project: React.FC<IProjectData> = ({
                         <p className="text-xs font-semibold leading-3 tracking-normal mt-2 mb-3">{userData?.start_date} – {userData?.end_date}</p>
                     </div>
                     {userData?.job_description?.map((job, index) => (
-                        <ul key={index} className="list-disc pl-3.5">
-                            <li className="text-sm tracking-normal leading-4 text-left mt-2">{job}</li>
-                        </ul>
+                        // <ul key={index} className="list-disc pl-3.5">
+                        <div key={index}>
+                        <span>●</span>
+                            <span className="text-sm tracking-normal leading-4 text-left mt-2">{job}</span>
+                        </div>
+                        // </ul>
                     ))}
                 </div>
             ))}
