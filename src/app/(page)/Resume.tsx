@@ -1,26 +1,30 @@
-"use client"
-import React from 'react';
+"use client";
+import React, { useRef } from 'react';
 import Project from "@/components/Project";
 import { education, experiences, projects } from "@/data";
-import { useRef } from "react";
 import jsPDF from 'jspdf';
 import html2canvas from "html2canvas";
+import { useReactToPrint } from 'react-to-print';
 
 const Resume = () => {
     const componentRef = useRef<HTMLDivElement>(null);
 
+    const handlePrintDocs = useReactToPrint({
+        content: () => componentRef.current,
+    });
+
     const handleDownload = async () => {
         if (componentRef.current) {
-            const pdf:any = new jsPDF('p', 'mm', 'a4');
+            const pdf: any = new jsPDF('p', 'mm', 'a4');
 
             const canvas = await html2canvas(componentRef.current, {
-                scale: 3,
+                scale: 2, // Adjust the scale as needed; lower values reduce the size
                 useCORS: true,
                 allowTaint: true,
                 logging: false,
             });
 
-            const imgData = canvas.toDataURL('image/jpeg', 0.9); // Adjust quality to 80%
+            const imgData = canvas.toDataURL('image/jpeg', 0.7); // Adjust quality to 50%
             const imgWidth = 210; // A4 width in mm
             const pageHeight = 297; // A4 height in mm
             const imgHeight = (canvas.height * imgWidth) / canvas.width;
@@ -123,7 +127,8 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
-            {/* <button onClick={handleDownload} className="mt-5 bg-blue-500 text-white p-2 rounded">Download PDF</button> */}
+            {/* <button onClick={handlePrintDocs} className="mt-5 bg-blue-500 text-white p-2 rounded">Print PDF</button>
+            <button onClick={handleDownload} className="mt-5 bg-green-500 text-white p-2 rounded">Download PDF</button> */}
         </div>
     );
 };
