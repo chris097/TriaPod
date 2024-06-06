@@ -2,7 +2,7 @@ import { IProjectProps } from "./types/project";
 
 export const experiences: IProjectProps[] = [
     {
-        company_name: 'Taxaide Limited',
+        company_name: 'Taxaide Technologies Limited',
         job_type: '',
         start_date: 'JAN 2024',
         end_date: 'TILL DATE',
