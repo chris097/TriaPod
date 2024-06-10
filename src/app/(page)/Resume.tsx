@@ -88,9 +88,9 @@ const Resume = () => {
                     <div className="border-b-4 border-black/50 pt-3 pb-5">
                         <ul className="list-none pl-0">
                             {education?.map((edu, index) => (
-                                <div key={index} className="flex items-start mt-2">
+                                <div key={index} className="flex items-start">
                                     <span className="mr-2">●</span>
-                                    <span className="text-sm tracking-normal leading-4 text-left">{edu}</span>
+                                    <span className="text-sm tracking-normal leading-4 text-left mt-[4.5px]">{edu}</span>
                                 </div>
                             ))}
                         </ul>
@@ -127,8 +127,8 @@ const Resume = () => {
                     </div>
                 </div>
             </div>
-            {/* <button onClick={handlePrintDocs} className="mt-5 bg-blue-500 text-white p-2 rounded">Print PDF</button>
-            <button onClick={handleDownload} className="mt-5 bg-green-500 text-white p-2 rounded">Download PDF</button> */}
+            <button onClick={handlePrintDocs} className="mt-5 bg-blue-500 text-white p-2 rounded">Print PDF</button>
+            <button onClick={handleDownload} className="mt-5 bg-green-500 text-white p-2 rounded">Download PDF</button>
         </div>
     );
 };
