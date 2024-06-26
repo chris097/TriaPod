@@ -3,7 +3,7 @@ import Resume from './(page)/Resume';
 
 export default function Home() {
   return (
-    <main className='h-screen p-6 font-montserrat'>
+    <main className='h-screen p-6 font-montserrat '>
       {/* <Resume /> */}
       <div className='bg-[#F9F9F9] border border-black/10 rounded-[40px] h-full p-5 items-center flex justify-center flex-col px-36'>
         <h1 className='text-[36px] text-center text-[#000] font-bold font-montserrat'>Craft Your Professional Journey Build Your CV with Ease</h1>
